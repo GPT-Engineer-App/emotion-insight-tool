@@ -12,7 +12,10 @@ const VideoAnalysis = () => {
       .then((stream) => {
         videoRef.current.srcObject = stream;
       })
-      .catch((err) => console.error("Error accessing webcam: ", err));
+      .catch((err) => {
+        console.error("Error accessing webcam: ", err);
+        setEmotionText("Unable to access webcam. Please check your camera settings.");
+      });
   }, []);
 
   const analyzeEmotion = () => {
@@ -35,7 +38,7 @@ const VideoAnalysis = () => {
         <Button colorScheme="teal" onClick={() => videoRef.current.play()}>
           Enable Video
         </Button>
-        <Box as="video" ref={videoRef} autoPlay width="100%" height="auto" mt={4} />
+        <Box as="video" ref={videoRef} autoPlay width="100%" height="auto" mt={4} controls />
         <Button colorScheme="teal" onClick={analyzeEmotion}>
           Analyze Emotion
         </Button>
