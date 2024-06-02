@@ -1,5 +1,7 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Index from "./pages/Index.jsx";
+import VideoAnalysis from "./pages/VideoAnalysis.jsx";
+import NavBar from "./components/NavBar.jsx";
 
 function App() {
   return (

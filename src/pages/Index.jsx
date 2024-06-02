@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Container, VStack, Text, Textarea, Button, Box, Progress, IconButton } from "@chakra-ui/react";
+import { Container, VStack, Text, Textarea, Button, Box, Progress } from "@chakra-ui/react";
 import { FaSmile, FaMeh, FaFrown } from "react-icons/fa";
 
 const Index = () => {
