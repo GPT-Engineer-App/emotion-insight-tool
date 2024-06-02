@@ -6,6 +6,7 @@ import NavBar from "./components/NavBar.jsx";
 function App() {
   return (
     <Router>
+      <NavBar />
       <Routes>
         <Route exact path="/" element={<Index />} />
       </Routes>

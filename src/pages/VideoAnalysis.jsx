@@ -15,10 +15,15 @@ const VideoAnalysis = () => {
   }, []);
 
   const analyzeEmotion = () => {
+    // Simulate a more detailed analysis
+    const positive = Math.floor(Math.random() * 50) + 25;
+    const negative = Math.floor(Math.random() * 30) + 10;
+    const neutral = 100 - positive - negative;
+
     setAnalysis({
-      positive: 40,
-      negative: 30,
-      neutral: 30,
+      positive,
+      negative,
+      neutral,
     });
   };
 
