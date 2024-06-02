@@ -1,9 +1,10 @@
 import { useState, useRef, useEffect } from "react";
-import { Container, VStack, Text, Button, Box } from "@chakra-ui/react";
+import { Container, VStack, Text, Button, Box, Textarea } from "@chakra-ui/react";
 
 const VideoAnalysis = () => {
   const [analysis, setAnalysis] = useState(null);
   const videoRef = useRef(null);
+  const [emotionText, setEmotionText] = useState("");
 
   useEffect(() => {
     navigator.mediaDevices
@@ -31,7 +32,10 @@ const VideoAnalysis = () => {
     <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
       <VStack spacing={4} width="100%">
         <Text fontSize="2xl">Video Emotional Analysis Tool</Text>
-        <Box as="video" ref={videoRef} autoPlay width="100%" height="auto" />
+        <Button colorScheme="teal" onClick={() => videoRef.current.play()}>
+          Enable Video
+        </Button>
+        <Box as="video" ref={videoRef} autoPlay width="100%" height="auto" mt={4} />
         <Button colorScheme="teal" onClick={analyzeEmotion}>
           Analyze Emotion
         </Button>
